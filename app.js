@@ -1,5 +1,8 @@
-const app = Vue.createApp({
-    template:"<h1>Hello World!</h1>"
-})
+const tutorials = data
 
-app.mount("#app")
+const app = new Vue({
+    el: '#app',
+    data: {
+        tuts : tutorials
+    }
+})

@@ -4,11 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Download Any Tutorial From the List Below..</title>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet" />
 </head>
 <body>
-    <div id="app"></div>
+    <div class="container  my-2">
+        <h1 class="display-4 text-center">List of Tutorials</h1>
+        <hr>
+        <div class="row">
+            <div class="col"></div>
+            <div id="app" class="col-md-10">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item " v-for="tut in tuts" :key=tut.id>
+                        <div class="row d-flex align-items-center">
+                            <div class="col-sm-10">
+                                {{tut.name}}
+                            </div>
+                            <div class="col-sm-2">
+                                <button class="btn btn-success btn-rounded" @click.prevent="window.open(tut.url);">Download</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                
+            </div>
+            <div class="col"></div>
+            
+        </div>
+        
+    </div>
+    <!--    MDB -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js" ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script type="text/javascript" src="data.json"></script>
 
-    <script src="https://unpkg.com/vue@3.0.5"></script>
     <script src="./app.js"></script>
 </body>
 </html>
